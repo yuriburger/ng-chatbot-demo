@@ -1,1 +1,15 @@
-Go
+<mat-card class="chat-card">
+    <mat-card-content class="chat-card-content" [style.overflow]="'auto'" [style.height.px]="'350'">
+        <app-chat-message *ngFor="let message of messages | async" [message]="message">
+        </app-chat-message>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-form-field class="full-width">
+            <input type="text" matInput placeholder="Bericht hier..." (keydown.enter)="onEnter($event)" [(ngModel)]="draftMessage.text"
+            />
+        </mat-form-field>
+        <span class="input-group-btn">
+            <button class="msg-send" mat-raised-button color="primary" (click)="onEnter($event)">Verstuur</button>
+        </span>
+    </mat-card-actions>
+</mat-card>

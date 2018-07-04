@@ -1,0 +1,17 @@
+.chat-card {
+  width: 350px;
+}
+
+.chat-card-content {
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+.full-width {
+  width: 260px;
+}
+
+.input-group-btn {
+  float: right;
+  margin-top: 20px;
+}

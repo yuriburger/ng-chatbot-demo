@@ -1,0 +1,9 @@
+<div *ngIf="incoming">
+  <span class="chat-time">{{message.author.name}} | {{message.sentAt | fromNow}}</span>
+  <p>{{message.text}}</p>
+</div>
+<div *ngIf="!incoming" class="msg-sent">
+  <span class="chat-time">{{message.sentAt | fromNow}} | {{message.author.name}}</span>
+  <p class="msg-sent">{{message.text}}</p>
+</div>
+<hr>
