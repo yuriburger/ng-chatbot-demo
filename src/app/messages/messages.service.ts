@@ -19,8 +19,6 @@ export class MessagesService {
 
   create: Subject<Message> = new Subject<Message>();
 
-  markThreadAsRead: Subject<any> = new Subject<any>();
-
   constructor() {
     this.messages = this.updates
       // Watch the updates and accumulate operations on the messages

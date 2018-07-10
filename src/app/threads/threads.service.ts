@@ -56,8 +56,6 @@ export class ThreadsService {
         }
       }
     );
-
-    this.currentThread.subscribe(this.messagesService.markThreadAsRead);
   }
 
   setCurrentThread(newThread: Thread): void {
