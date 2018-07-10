@@ -46,23 +46,6 @@ export class MessagesService {
       .subscribe(this.updates);
 
     this.newMessages.subscribe(this.create);
-
-    // Takes a Thread and then puts an operation
-    // on the updates stream to mark the Messages as read
-    this.markThreadAsRead
-      .pipe(
-        map((thread: Thread) => {
-          return (messages: Message[]) => {
-            return messages.map((message: Message) => {
-              if (message.thread.id === thread.id) {
-                message.isRead = true;
-              }
-              return message;
-            });
-          };
-        })
-      )
-      .subscribe(this.updates);
   }
 
   // Add message to stream
